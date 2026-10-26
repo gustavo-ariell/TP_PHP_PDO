@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #f0e6f6;
+    color: #2c2c2c;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #5b2c8e;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    margin-top: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #5b2c8e;
+    background-color: #e8d5f5;
+    padding: 6px 12px;
+    margin: 3px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background-color: #d1b3ec;
+}
+
+main {
+    max-width: 1100px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 25px;
+    border: 1px solid #d4c1e8;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+h2 {
+    color: #5b2c8e;
+    border-bottom: 2px solid #e67e22;
+    padding-bottom: 6px;
+}
+
+h3 {
+    color: #e67e22;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+th, td {
+    border: 1px solid #d4c1e8;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background-color: #5b2c8e;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f3eaf9;
+}
+
+form {
+    max-width: 650px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+input[type="time"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #b39ddb;
+    border-radius: 4px;
+}
+
+button {
+    margin-top: 18px;
+    padding: 10px 18px;
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #d35400;
+}
+
+.btn-eliminar {
+    background-color: #c0392b;
+    padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.btn-eliminar:hover {
+    background-color: #922b21;
+}
+
+.btn-editar {
+    background-color: #27ae60;
+    padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.btn-editar:hover {
+    background-color: #1e8449;
+}
+
+.mensaje {
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.exito {
+    background-color: #d5f5e3;
+    color: #1e8449;
+    border: 1px solid #52be80;
+}
+
+.error {
+    background-color: #fadbd8;
+    color: #922b21;
+    border: 1px solid #e74c3c;
+}
+
+.requerido {
+    color: #e74c3c;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #8e44ad;
+    font-size: 13px;
+}

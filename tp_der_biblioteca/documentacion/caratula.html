@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Informe — Sistema de Biblioteca Escolar</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 40px 60px;
+        color: #333;
+        background-color: #fff;
+        line-height: 1.7;
+        font-size: 13px;
+    }
+
+    /* ===== Títulos ===== */
+    h1 {
+        font-size: 22px;
+        color: #2c3e6b;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    h2 {
+        font-size: 17px;
+        color: #2c3e6b;
+        background-color: #e8edf6;
+        padding: 8px 14px;
+        border-left: 5px solid #7fa0d4;
+        border-radius: 0 6px 6px 0;
+        margin-top: 35px;
+        margin-bottom: 12px;
+    }
+
+    h3 {
+        font-size: 14px;
+        color: #3a5a8c;
+        background-color: #f2f5fb;
+        padding: 5px 10px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-top: 15px;
+    }
+
+    /* ===== Tablas ===== */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12px 0;
+    }
+
+    th {
+        background-color: #b8c8e6;
+        color: #2c3e6b;
+        padding: 8px 10px;
+        border: 1px solid #a0b4d8;
+        text-align: left;
+        font-size: 12px;
+    }
+
+    td {
+        padding: 7px 10px;
+        border: 1px solid #c8d4ea;
+        font-size: 12px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f0f4fa;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #fff;
+    }
+
+    /* ===== Portada ===== */
+    .portada {
+        text-align: center;
+        padding-top: 120px;
+        page-break-after: always;
+    }
+
+    .portada h1 {
+        font-size: 28px;
+        color: #2c3e6b;
+    }
+
+    .portada h2 {
+        font-size: 20px;
+        color: #3a5a8c;
+        background-color: #e8edf6;
+        border-left: none;
+        border-radius: 6px;
+        display: inline-block;
+        padding: 10px 30px;
+    }
+
+    .portada p {
+        font-size: 15px;
+    }
+
+    .portada .titulo-sistema {
+        font-size: 20px;
+        font-weight: bold;
+        color: #2c3e6b;
+        background-color: #dce6f5;
+        display: inline-block;
+        padding: 12px 30px;
+        border-radius: 8px;
+        margin-top: 15px;
+    }
+
+    /* ===== Espacios para capturas ===== */
+    .captura {
+        border: 2px dashed #a0b4d8;
+        background-color: #f7f9fc;
+        padding: 30px;
+        text-align: center;
+        color: #7a8fb5;
+        font-style: italic;
+        margin: 10px 0;
+        border-radius: 6px;
+    }
+
+    /* ===== Código / SQL ===== */
+    code {
+        background-color: #e8edf6;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: "Courier New", monospace;
+        font-size: 11px;
+        color: #2c3e6b;
+    }
+
+    pre {
+        background-color: #f2f5fb;
+        padding: 14px;
+        font-family: "Courier New", monospace;
+        font-size: 11px;
+        color: #333;
+        border-left: 4px solid #7fa0d4;
+        border-radius: 0 6px 6px 0;
+        overflow-x: auto;
+    }
+
+    /* ===== Listas ===== */
+    ul {
+        margin: 8px 0 8px 20px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+
+    /* ===== Párrafos destacados ===== */
+    .destacado {
+        background-color: #fff8e1;
+        border-left: 5px solid #f0c040;
+        padding: 10px 15px;
+        border-radius: 0 6px 6px 0;
+        margin: 10px 0;
+    }
+
+    /* ===== Estructura árbol ===== */
+    .arbol {
+        background-color: #f2f5fb;
+        padding: 14px 20px;
+        font-family: "Courier New", monospace;
+        font-size: 11px;
+        line-height: 1.8;
+        color: #2c3e6b;
+        border-left: 4px solid #7fa0d4;
+        border-radius: 0 6px 6px 0;
+    }
+
+    /* ===== Pie ===== */
+    .pie {
+        text-align: center;
+        color: #999;
+        font-size: 11px;
+        margin-top: 50px;
+        padding-top: 15px;
+        border-top: 1px solid #ddd;
+    }
+
+    /* ===== Separador visual ===== */
+    .separador {
+        border: none;
+        border-top: 2px solid #dce6f5;
+        margin: 30px 0;
+    }
+</style>
+</head>
+<body>
+
+<!-- ==================== CARÁTULA ==================== -->
+<div class="portada">
+    <br><br><br><br>
+
+    <h1>TRABAJO PRÁCTICO</h1>
+
+    <h2>Desarrollo de Prototipo Web con PHP, PDO y MySQL</h2>
+
+    <br>
+
+    <div class="titulo-sistema">
+        Sistema de Biblioteca Escolar
+    </div>
+
+    <br><br>
+
+    <p><strong>Integrantes:</strong></p>
+    <p>Apellido, Nombre — Legajo ___</p>
+    <p>Apellido, Nombre — Legajo ___</p>
+
+    <br>
+
+    <p><strong>Materia:</strong> Bases de Datos / Programación</p>
+    <p><strong>Docente:</strong> _____________________</p>
+    <p><strong>Año:</strong> 2025</p>
+</div>
+
+<!-- ==================== 1. NOMBRE DEL SISTEMA ==================== -->
+<h2>1. Nombre del sistema</h2>
+
+<div class="destacado">
+    <strong>Sistema de Biblioteca Escolar</strong>
+</div>
+
+<hr class="separador">
+
+<!-- ==================== 2. DESCRIPCIÓN ==================== -->
+<h2>2. Descripción breve del problema</h2>
+
+<p>
+    El presente sistema tiene como objetivo gestionar la operación de una biblioteca escolar,
+    permitiendo administrar <strong>libros</strong>, <strong>autores</strong>,
+    <strong>editoriales</strong>, <strong>estudiantes</strong> y <strong>préstamos</strong>.
+</p>
+
+<p>
+    La aplicación web permite registrar libros y autores, asociar los libros con sus respectivas
+    editoriales, registrar estudiantes de la institución y gestionar los préstamos de libros,
+    incluyendo:
+</p>
+
+<ul>
+    <li>Registrar libros, autores, estudiantes y préstamos.</li>
+    <li>Consultar libros disponibles y libros prestados.</li>
+    <li>Consultar préstamos realizados por estudiante.</li>
+    <li>Modificar información de libros.</li>
+    <li>Registrar devoluciones.</li>
+</ul>
+
+<p>
+    El sistema fue desarrollado como <strong>prototipo funcional</strong> utilizando
+    HTML5, CSS3, PHP con PDO y MySQL, integrado con la base de datos relacional diseñada en el
+    trabajo práctico anterior mediante MySQL Workbench.
+</p>
+
+<hr class="separador">
+
+<!-- ==================== 3. DER ==================== -->
+<h2>3. Imagen del DER físico</h2>
+
+<div class="captura">
+    [ Insertar acá la imagen del diagrama entidad-relación físico<br>
+    exportado desde MySQL Workbench ]<br><br>
+    <small>Formato sugerido: PNG o JPG — ancho completo de página</small>
+</div>
+
+<hr class="separador">
+
+<!-- ==================== 4. TABLAS ==================== -->
+<h2>4. Descripción de las tablas utilizadas</h2>
+
+<h3>4.1. Tabla <code>autor</code></h3>
+<table>
+    <tr>
+        <th>Campo</th>
+        <th>Tipo</th>
+        <th>Restricción</th>
+        <th>Descripción</th>
+    </tr>
+    <tr>
+        <td><code>id_autor</code></td>
+        <td>INT</td>
+        <td>PRIMARY KEY, AUTO_INCREMENT</td>
+        <td>Identificador único del autor</td>
+    </tr>
+    <tr>
+        <td><code>nombre</code></td>
+        <td>VARCHAR(100)</td>
+        <td>NOT NULL</td>
+        <td>Nombre del autor</td>
+    </tr>
+    <tr>
+        <td><code>apellido</code></td>
+        <td>VARCHAR(100)</td>
+        <td>NOT NULL</td>
+        <td>Apellido del autor</td>
+    </tr>
+    <tr>
+        <td><code>nacionalidad</code></td>
+        <td>VARCHAR(80)</td>
+        <td>NULL</td>
+        <td>Nacionalidad del autor</td>
+    </tr>
+</table>
+
+<h3>4.2. Tabla <code>editorial</code></h3>
+<table>
+    <tr>
+        <th>Campo</th>
+        <th>Tipo</th>
+        <th>Restricción</th>
+        <th>Descripción</th>
+    </tr>
+    <tr>
+        <td><code>id_editorial</code></td>
+        <td>INT</td>
+        <td>PRIMARY KEY, AUTO_INCREMENT</td>
+        <td>Identificador único de la editorial</td>
+    </tr>
+    <tr>
+        <td><code>nombre</code></td>
+        <td>VARCHAR(150)</td>
+        <td>NOT NULL</td>
+        <td>Nombre de la editorial</td>
+    </tr>
+    <tr>
+        <td><code>pais</code></td>
+        <td>VARCHAR(80)</td>
+        <td>NULL</td>
+        <td>País de origen</td>
+    </tr>
+</table>
+
+<h3>4.3. Tabla <code>libro</code></h3>
+<table>
+    <tr>
+        <th>Campo</th>
+        <th>Tipo</th>
+        <th>Restricción</th>
+        <th>Descripción</th>
+    </tr>
+    <tr>
+        <td><code>id_libro</code></td>
+        <td>INT</td>
+        <td>PRIMARY KEY, AUTO_INCREMENT</td>
+        <td>Identificador único del libro</td>
+    </tr>
+    <tr>
+        <td><code>titulo</code></td>
+        <td>VARCHAR(200)</td>
+        <td>NOT NULL</td>
+        <td>Título del libro</td>
+    </tr>
+    <tr>
+        <td><code>isbn</code></td>
+        <td>VARCHAR(20)</td>
+        <td>UNIQUE</td>
+        <td>ISBN del libro</td>
+    </tr>
+    <tr>
+        <td><code>anio</code></td>
+        <td>SMALLINT</td>
+        <td>NULL</td>
+        <td>Año de publicación</td>
+    </tr>
+    <tr>
+        <td><code>id_editorial</code></td>
+        <td>INT</td>
+        <td>FOREIGN KEY → editorial</td>
+        <td>Editorial del libro</td>
+    </tr>
+    <tr>
+        <td><code>ejemplares</code></td>
+        <td>INT</td>
+        <td>DEFAULT 1</td>
+        <td>Cantidad de ejemplares</td>
+    </tr>
+</table>
+
+<h3>4.4. Tabla <code>libro_autor</code> (relación N:M)</h3>
+<table>
+    <tr>
+        <th>Campo</th>
+        <th>Tipo</th>
+        <th>Restricción</th>
+        >
+        <td><code>id_libro</code></td>
+        <td>INT</td>
+        <td>PRIMARY KEY, FOREIGN KEY → libro</td>
+        <td>Libro asociado</td>
+    </tr>
+    <tr>
+        <td><code>id_autor</code></td>
+        <td>INT</td>
+        <td>PRIMARY KEY, FOREIGN KEY → autor<th>Descripción</th>
+    </tr>
+    <tr</td>
+        <td>Autor asociado</td>
+    </tr>
+</table>
+
+<h3>4.5. Tabla <code>estudiante</code></h3>
+<table>
+    <tr>
+        <th>Campo</th>
+        <th>Tipo</th>
+        <th>Restricción</th>
+        <th>Descripción</th>
+    </tr>
+    <tr>
+        <td><code>id_estudiante</code></td>
+        <td>INT</td>
+        <td>PRIMARY KEY, AUTO_INCREMENT</td>
+        <td>Identificador único del estudiante</td>
+    </tr>
+    <tr>
+        <td><code>nombre</code></td>
+        <td>VARCHAR(100)</td>
+        <td>NOT NULL</td>
+        <td>Nombre del estudiante</td>
+    </tr>
+    <tr>
+        <td><code>apellido</code></td>
+        <td>VARCHAR(100)</td>
+        <td>NOT NULL</td>
+        <td>Apellido del estudiante</td>
+    </tr>
+    <tr>
+        <td><code>dni</code></td>
+        <td>VARCHAR(20)</td>
+        <td>UNIQUE, NOT NULL</td>
+        <td>DNI del estudiante</td>
+    </tr>
+    <tr>
+        <td><code>email</code></td>
+        <td>VARCHAR(150)</td>
+        <td>NULL</td>
+        <td>Correo electrónico</td>
+    </tr>
+</table>
+
+<h3>4.6. Tabla <code>prestamo</code></h3>
+<table>
+    <tr>
+        <th>Campo</th>
+        <th>Tipo</th>
+        <th>Restricción</th>
+        <th>Descripción</th>
+    </tr>
+    <tr>
+        <td><code>id_prestamo</code></td>
+        <td>INT</td>
+        <td>PRIMARY KEY, AUTO_INCREMENT</td>
+        <td>Identificador único del préstamo</td>
+    </tr>
+    <tr>
+        <td><code>id_estudiante</code></td>
+        <td>INT</td>
+        <td>FOREIGN KEY → estudiante, NOT NULL</td>
+        <td>Estudiante que solicita</td>
+    </tr>
+    <tr>
+        <td><code>id_libro</code></td>
+        <td>INT</td>
+        <td>FOREIGN KEY → libro, NOT NULL</td>
+        <td>Libro prestado</td>
+    </tr>
+    <tr>
+        <td><code>fecha_prestamo</code></td>
+        <td>DATE</td>
+        <td>NOT NULL</td>
+        <td>Fecha del préstamo</td>
+    </tr>
+    <tr>
+        <td><code>fecha_devolucion</code></td>
+        <td>DATE</td>
+        <td>NULL</td>
+        <td>Fecha de devolución (NULL si no se devolvió)</td>
+    </tr>
+    <tr>
+        <td><code>estado</code></td>
+        <td>VARCHAR(50<td><code>libro.id_editorial</code></td>
+    </tr>
+    <tr>
+        <td>libro</td>
+        <td>libro_autor</td>
+        <td>1 : N</td>
+        <td><code>libro_autor.id_libro</code></td>
+    </tr>
+    <tr>
+        <tr>
+        <td>editorial</td>
+       )</td>
+        <td>DEFAULT 'activo'</td>
+        <td>activo / devuelto</td>
+    </tr>
+</table>
+
+<h3>4.7. Relaciones entre tablas</h3>
+<table>
+    <tr>
+        <th>Tabla padre</th>
+        <th>Tabla hijo</th>
+        <th>Cardinalidad</th>
+        <th>Clave foránea</th>
+    </tr>
+     <td>libro</td>
+        <td>1 : N</td>
+        <td>autor</td>
+        <td>libro_autor</td>
+        <td>1 : N</td>
+        <td><code>libro_autor.id_autor</code></td>
+    </tr>
+    <tr>
+        <td>estudiante</td>
+        <td>prestamo</td>
+        <td>1 : N</td>
+        <td><code>prestamo.id_estudiante</code></td>
+    </tr>
+    <tr>
+        <td>libro</td>
+        <td>prestamo</td>
+        <td>1 : N</td>
+        <td><code>prestamo.id_libro</code></td>
+    </tr>
+</table>
+
+<hr class="separador">
+
+<!-- ==================== 5. ESTRUCTURA ==================== -->
+<h2>5. Estructura de carpetas del proyecto</h2>
+
+<div class="arbol">
+Apellido_Nombre_TP_PHP_PDO/<br>
+├── aplicacion/<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;├── index.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;├── conexion.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;├── css/<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;└── estilos.css<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;├── libro/<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;├── alta.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;├── listar.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;├── editar.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;└── eliminar.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;├── autor/<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;├── alta.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;├── listar.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;├── editar.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;└── eliminar.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;├── estudiante/<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;├── alta.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;├── listar.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;├── editar.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;└── eliminar.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;├── prestamo/<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;├── alta.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;├── listar.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;├── editar.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;└── eliminar.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;└── consultas/<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── libros_disponibles.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── libros_prestados.php<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── prestamos_por_estudiante.php<br>
+├── base_datos/<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;└── base_datos.sql<br>
+└── documentacion/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── informe.pdf
+</div>
+
+<hr class="separador">
+
+<!-- ==================== 6. PÁGINA PRINCIPAL ==================== -->
+<h2>6. Captura de la página principal</h2>
+
+<div class="captura">
+    [ Insertar captura de pantalla de <code>index.php</code> ]<br>
+    Menú principal con links a: Libros, Autores, Estudiantes, Préstamos y Consultas
+</div>
+
+<hr class="separador">
+
+<!-- ==================== 7. FORMULARIOS ==================== -->
+<h2>7. Capturas de los formularios</h2>
+
+<h3>7.1. Formulario de alta de libro</h3>
+<div class="captura">
+    [ Captura del formulario ]<br>
+    Campos: título, ISBN, año, editorial (select dinámico), ejemplares
+</div>
+
+<h3>7.2. Formulario de alta de autor</h3>
+<div class="captura">
+    [ Captura del formulario ]<br>
+    Campos: nombre, apellido, nacionalidad
+</div>
+
+<h3>7.3. Formulario de alta de estudiante</h3>
+<div class="captura">
+    [ Captura del formulario ]<br>
+    Campos: nombre, apellido, DNI, email
+</div>
+
+<h3>7.4. Formulario de alta de préstamo</h3>
+<div class="captura">
+    [ Captura del formulario ]<br>
+    Campos: estudiante (select dinámico), libro (select dinámico), fecha préstamo
+</div>
+
+<hr class="separador">
+
+<!-- ==================== 8. INSERT ==================== -->
+<h2>8. Captura de una operación INSERT</h2>
+
+<div class="captura">
+    [ Captura mostrando el formulario completado<br>
+    y el mensaje de éxito: "Libro registrado correctamente" ]
+</div>
+
+<h3>8.1. Sentencia SQL utilizada</h3>
+<pre>
+$sql = "INSERT INTO libro (titulo, isbn, anio, id_editorial, ejemplares)
+        VALUES (:titulo, :isbn, :anio, :id_editorial, :ejemplares)";
+
+$stmt = $pdo->prepare($sql);
+
+$stmt->execute([
+    ':titulo'       => $titulo,
+    ':isbn'         => $isbn,
+    ':anio'         => $anio,
+    ':id_editorial' => $id_editorial,
+    ':ejemplares'   => $ejemplares
+]);
+</pre>
+
+<hr class="separador">
+
+<!-- ==================== 9. SELECT ==================== -->
+<h2>9. Captura de una consulta SELECT</h2>
+
+<div class="captura">
+    [ Captura de la página de listado de libros<br>
+    con la tabla HTML que muestra todos los registros ]
+</div>
+
+<h3>9.1. Sentencia SQL utilizada</h3>
+<pre>
+$sql = "SELECT l.id_libro, l.titulo, l.isbn, l.anio,
+               e.nombre AS editorial, l.ejemplares
+        FROM libro l
+        LEFT JOIN editorial e ON l.id_editorial = e.id_editorial
+        ORDER BY l.titulo";
+
+$stmt = $pdo->query($sql);
+$libros = $stmt->fetchAll();
+</pre>
+
+<hr class="separador">
+
+<!-- ==================== 10. UPDATE ==================== -->
+<h2>10. Captura de una operación UPDATE</h2>
+
+<div class="captura">
+    [ Captura del formulario de edición de un libro<br>
+    (con datos precargados) y el mensaje:<br>
+    "Libro modificado correctamente" ]
+</div>
+
+<h3>10.1. Sentencia SQL utilizada</h3>
+<pre>
+$sql = "UPDATE libro SET
+            titulo = :titulo,
+            isbn = :isbn,
+            anio = :anio,
+            id_editorial = :id_editorial,
+            ejemplares = :ejemplares
+        WHERE id_libro = :id_libro";
+
+$stmt = $pdo->prepare($sql);
+
+$stmt->execute([
+    ':titulo'       => $titulo,
+    ':isbn'         => $isbn,
+    ':anio'         => $anio,
+    ':id_editorial' => $id_editorial,
+    ':ejemplares'   => $ejemplares,
+    ':id_libro'     => $id_libro
+]);
+</pre>
+
+<hr class="separador">
+
+<!-- ==================== 11. DELETE ==================== -->
+<h2>11. Captura de una eliminación DELETE</h2>
+
+<div class="captura">
+    [ Captura de la pantalla de confirmación de eliminación<br>
+    y el mensaje: "Registro eliminado correctamente" ]
+</div>
+
+<h3>11.1. Sentencia SQL utilizada</h3>
+<pre>
+$sql = "DELETE FROM prestamo WHERE id_prestamo = :id_prestamo";
+
+$stmt = $pdo->prepare($sql);
+
+$stmt->execute([
+    ':id_prestamo' => $id_prestamo
+]);
+</pre>
+
+<hr class="separador">
+
+<!-- ==================== 12. INNER JOIN ==================== -->
+<h2>12. Captura de una consulta utilizando INNER JOIN</h2>
+
+<div class="captura">
+    [ Captura de la consulta "Préstamos por estudiante"<br>
+    mostrando tabla HTML con datos combinados de<br>
+    estudiante, libro y préstamo ]
+</div>
+
+<h3>12.1. Sentencia SQL utilizada</h3>
+<pre>
+$sql = "SELECT
+            e.nombre,
+            e.apellido,
+            e.dni,
+            l.titulo,
+            l.isbn,
+            p.fecha_prestamo,
+            p.fecha_devolucion,
+            p.estado
+        FROM prestamo p
+        INNER JOIN estudiante e ON p.id_estudiante = e.id_estudiante
+        INNER JOIN libro l ON p.id_libro = l.id_libro
+        WHERE p.id_estudiante = :id_estudiante
+        ORDER BY p.fecha_prestamo DESC";
+
+$stmt = $pdo->prepare($sql);
+
+$stmt->execute([
+    ':id_estudiante' => $id_estudiante
+]);
+
+$prestamos = $stmt->fetchAll();
+</pre>
+
+<hr class="separador">
+
+<!-- ==================== 13. phpMyAdmin ==================== -->
+<h2>13. Capturas desde phpMyAdmin</h2>
+
+<h3>13.1. Verificación de INSERT</h3>
+<div class="captura">
+    [ Captura de phpMyAdmin mostrando el registro<br>
+    recién insertado en la tabla correspondiente ]
+</div>
+
+<h3>13.2. Verificación de UPDATE</h3>
+<div class="captura">
+    [ Captura de phpMyAdmin mostrando los datos modificados ]
+</div>
+
+<h3>13.3. Verificación de DELETE</h3>
+<div class="captura">
+    [ Captura de phpMyAdmin mostrando que el registro<br>
+    fue eliminado ]
+</div>
+
+<hr class="separador">
+
+<!-- ==================== 14. EXPLICACIÓN ==================== -->
+<h2>14. Explicación del funcionamiento general de la aplicación</h2>
+
+<h3>14.1. Conexión a la base de datos</h3>
+<p>
+    La aplicación utiliza un archivo independiente <code>conexion.php</code> que establece
+    la conexión a MySQL mediante la clase <code>PDO</code>. Este archivo es reutilizado por
+    todas las páginas mediante <code>require_once</code>.
+</p>
+
+<h3>14.2. Operaciones CRUD</h3>
+<ul>
+    <li><strong>CREATE:</strong> Formularios HTML que envían datos mediante <code>$_POST</code>
+        y ejecutan sentencias <code>INSERT INTO</code> mediante <code>prepare()</code>
+        y <code>execute()</code>.</li>
+    <li><strong>READ:</strong> Páginas de listado que ejecutan <code>SELECT</code> y
+        muestran los resultados en tablas HTML.</li>
+    <li><strong>UPDATE:</strong> Formularios de edición con datos precargados que ejecutan
+        <code>UPDATE ... SET ... WHERE</code>.</li>
+    <li><strong>DELETE:</strong> Páginas de confirmación que ejecutan
+        <code>DELETE FROM ... WHERE</code>.</li>
+</ul>
+
+<h3>14.3. Relaciones entre tablas</h3>
+<p>
+    Los formularios que requieren referencias a otras tablas utilizan elementos
+    <code>&lt;select&gt;</code> dinámicos, donde las opciones se obtienen mediante consultas
+    <code>SELECT</code> a la base de datos. El usuario visualiza el nombre descriptivo,
+    pero la aplicación almacena la <strong>clave foránea</strong> correspondiente.
+</p>
+
+<h3>14.4. Consultas relacionadas</h3>
+<p>
+    El sistema incluye consultas que utilizan <code>INNER JOIN</code> para combinar información
+    de múltiples tablas:
+</p>
+<ul>
+    <li>Préstamos por estudiante (estudiante + libro + préstamo).</li>
+    <li>Libros con sus autores (libro + libro_autor + autor).</li>
+    <li>Libros disponibles.</li>
+</ul>
+
+<h3>14.5. Validaciones</h3>
+<p>
+    Los formularios incorporan validaciones HTML (<code>required</code>,
+    <code>type="email"</code>, <code>type="number"</code>, <code>type="date"</code>)
+    y validaciones desde PHP mediante verificación de campos vacíos y uso de
+    <code>try / catch</code> para capturar errores de la base de datos.
+</p>
+
+<h3>14.6. Mensajes de estado</h3>
+<p>
+    Cada operación (alta, modificación, eliminación) muestra un mensaje de estado indicando
+    si la operación fue realizada correctamente o si ocurrió un error.
+</p>
+
+<div class="pie">
+    — Fin del informe —
+</div>
+
+</body>
+</html>

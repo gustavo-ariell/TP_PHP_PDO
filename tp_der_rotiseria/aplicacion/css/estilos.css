@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #222;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #b45309;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    margin-top: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #b45309;
+    background-color: #fef3c7;
+    padding: 6px 12px;
+    margin: 3px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background-color: #fde68a;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 25px;
+    border: 1px solid #ddd;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+h2 {
+    color: #b45309;
+    border-bottom: 2px solid #b45309;
+    padding-bottom: 6px;
+}
+
+h3 {
+    color: #b45309;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background-color: #b45309;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #fef9ee;
+}
+
+form {
+    max-width: 650px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+}
+
+button {
+    margin-top: 18px;
+    padding: 10px 18px;
+    background-color: #b45309;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #92400e;
+}
+
+.btn-eliminar {
+    background-color: #a32c2c;
+    padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.btn-editar {
+    background-color: #2c7a3f;
+    padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.mensaje {
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.exito {
+    background-color: #d9f2dd;
+    color: #1e6b2f;
+    border: 1px solid #7cc48f;
+}
+
+.error {
+    background-color: #f8d7d7;
+    color: #8f1f1f;
+    border: 1px solid #d38888;
+}
+
+.requerido {
+    color: #a32c2c;
+}
+
+.total {
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+    color: #b45309;
+    margin: 15px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #666;
+    font-size: 13px;
+}
